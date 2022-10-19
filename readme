@@ -1,0 +1,24 @@
+These are just notes:
+
+Common resolutions for 16:9 are listed in the table below:
+Width Height Standard
+256   144    
+320   180    QnHD
+426   240    NTSC widescreen
+640   360    nHD
+848   480    
+854   480    FWVGA
+960   540    qHD
+1024  576    
+1280  720    HD
+1366  768    
+1600  900    HD+
+1920  1080   Full HD
+2560  1440   QHD
+3200  1800   QHD+
+3840  2160   4K UHD
+5120  2880   5K
+7680  4320   8K UHD
+
+ffmpeg -r <framerate> -f image2 -s <width>x<height> -i %04d.png -vcodec h264_nvenc -crf 25 -pix_fmt yuv420p output.mp4
+

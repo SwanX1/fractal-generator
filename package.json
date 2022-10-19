@@ -1,0 +1,14 @@
+{
+  "type": "commonjs",
+  "main": "src/index.js",
+  "dependencies": {
+    "fs-extra": "^10.1.0",
+    "gl": "^6.0.1",
+    "gpu.js": "https://github.com/dhritzkiv/gpu.js#update-gl",
+    "pngjs": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/pngjs": "^6.0.1"
+  }
+}
