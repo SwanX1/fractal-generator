@@ -9,15 +9,19 @@ const options = {
 };
 
 async function main(shader) {
-  for (let i = 0; i < Math.PI * 2; i += (Math.PI * 2) / options.circleResolution) {
+  for (let i = 0; i < options.circleResolution; i++) {
+    console.debug(`Frame ${i + 1}/${options.circleResolution}`);
+    const theta = (Math.PI * 2) * (i / options.circleResolution);
+    console.debug(`\tStep  = ${i / options.circleResolution}`);
+    console.debug(`\tTheta = ${theta}`);
     await generateAndWriteTiles(
       shader,
-      `julia/${Math.round(i).toString().padStart(options.circleResolution.toString().length, "0")}`,
+      `julia/${i.toString().padStart(options.circleResolution.toString().length, "0")}`,
       {
         centerX: 0,
         centerY: 0,
-        cx: Math.cos(i),
-        cy: Math.sin(i),
+        cx: Math.cos(theta),
+        cy: Math.sin(theta),
         height: options.height,
         width: options.width,
         scale: 1.3,
